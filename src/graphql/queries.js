@@ -6,6 +6,7 @@ export const getNote = /* GraphQL */ `
     getNote(id: $id) {
       id
       name
+      points
       description
       createdAt
       updatedAt
@@ -22,6 +23,7 @@ export const listNotes = /* GraphQL */ `
       items {
         id
         name
+        points
         description
         createdAt
         updatedAt
