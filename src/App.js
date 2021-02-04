@@ -35,25 +35,25 @@ function App() {
 
   return (
     <div className="App">
-      <h1>My Notes App</h1>
+      <h1>My Tasks</h1>
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
-        placeholder="Note name"
+        placeholder="Task name"
         value={formData.name}
       />
       <input
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="Note description"
+        placeholder="Task description"
         value={formData.description}
       />
-      <button onClick={createNote}>Create Note</button>
+      <button onClick={createNote}>Create Task</button>
       <div style={{marginBottom: 30}}>
         {
           notes.map(note => (
             <div key={note.id || note.name}>
               <h2>{note.name}</h2>
               <p>{note.description}</p>
-              <button onClick={() => deleteNote(note)}>Delete note</button>
+              <button onClick={() => deleteNote(note)}>Delete Task</button>
             </div>
           ))
         }
