@@ -68,17 +68,12 @@ function App() {
                     </ul>
                     <button onClick={() => deleteNote(note)} type="button" class="btn btn-outline-secondary mb-3">Delete Task</button>
                 </div>
-            </div>
-              <h2></h2>
-              <p></p>
-              <button >Delete Task</button>
+            
             </div>
           ))
         }
       </div>
       <AmplifySignOut />
-    
-    </div>
     </div>
   );
 }
