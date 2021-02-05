@@ -17,7 +17,7 @@ function App() {
   }, []);
 
  async function createUser(){
-   cost user = await Auth.currentAuthenticatedUser()
+   const user = await Auth.currentAuthenticatedUser()
    console.log({ user })
  }
 
