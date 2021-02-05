@@ -29,19 +29,10 @@ function App() {
    
    
  }
-  
-  
-  async function checkUser() {
-    let user = await Auth.currentAuthenticatedUser();  
-    const { attributes } = await Auth.currentAuthenticatedUser()
-    try{
-      await API.graphql({ query: createPeopleMutation, variables: { 
-        subID: attributes.sub
-      } });
-      
-    } catch (error) {
-      console.log("Catastrophic ERRROOOORRR ------------------------- ", error)
-    }
+ 
+    async function checkUser() {
+      let user = await Auth.currentAuthenticatedUser();  
+      alert(user.username)
   }
 
   async function fetchNotes() {
