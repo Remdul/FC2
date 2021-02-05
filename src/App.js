@@ -36,8 +36,9 @@ function App() {
     const { attributes } = await Auth.currentAuthenticatedUser()
     try{
       await API.graphql({ query: createPeopleMutation, variables: { 
-        id: attributes.sub
+        subID: attributes.sub
       } });
+      
     } catch (error) {
       console.log("Catastrophic ERRROOOORRR ------------------------- ", error)
     }
