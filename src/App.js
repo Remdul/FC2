@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     fetchNotes();
-    createUser();
+    checkUser();
   }, []);
 
  async function createUser(){
@@ -29,6 +29,15 @@ function App() {
    
    
  }
+  
+  
+  async function checkUser() {
+    let user = await Auth.currentAuthenticatedUser();  
+    console.log("HERE -----------------------------------------------...")
+    console.log(user.email)
+    console.log(user.sub)
+    console.log("HERE -----------------------------------------------^^^")
+  }
 
   async function fetchNotes() {
     const apiData = await API.graphql({ query: listNotes });
