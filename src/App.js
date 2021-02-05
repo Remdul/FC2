@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { API } from 'aws-amplify';
+import { API, Auth } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
@@ -13,7 +13,13 @@ function App() {
 
   useEffect(() => {
     fetchNotes();
+    createUser();
   }, []);
+
+ async function createUser(){
+   cost user = await Auth.currentAuthenticatedUser()
+   console.log({ user })
+ }
 
   async function fetchNotes() {
     const apiData = await API.graphql({ query: listNotes });
