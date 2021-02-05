@@ -4,6 +4,7 @@ import { API, Auth, DataStore } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
+import { createPeople as createPeopleMutation } from './graphql/mutations';
 
 const initialFormState = { name: '', description: '' }
 
@@ -20,13 +21,7 @@ function App() {
    const user = await Auth.currentAuthenticatedUser()
    console.log({user})
    try{
-     
-     await DataStore.save(
-        new People({
-         subID: user.sub
-        })
-
-       );
+      await API.graphql({ query: createPeopleMutation, variables: { subID: user.sub } });
    } catch (error) {
      console.log( "User Creation Failed: ", error );
    }

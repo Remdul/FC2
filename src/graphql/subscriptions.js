@@ -1,6 +1,96 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onCreatePeople = /* GraphQL */ `
+  subscription OnCreatePeople {
+    onCreatePeople {
+      id
+      firstName
+      subID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      Notes {
+        items {
+          id
+          name
+          points
+          description
+          peopleID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const onUpdatePeople = /* GraphQL */ `
+  subscription OnUpdatePeople {
+    onUpdatePeople {
+      id
+      firstName
+      subID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      Notes {
+        items {
+          id
+          name
+          points
+          description
+          peopleID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
+export const onDeletePeople = /* GraphQL */ `
+  subscription OnDeletePeople {
+    onDeletePeople {
+      id
+      firstName
+      subID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+      Notes {
+        items {
+          id
+          name
+          points
+          description
+          peopleID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+        nextToken
+        startedAt
+      }
+    }
+  }
+`;
 export const onCreateNote = /* GraphQL */ `
   subscription OnCreateNote {
     onCreateNote {
@@ -8,6 +98,10 @@ export const onCreateNote = /* GraphQL */ `
       name
       points
       description
+      peopleID
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -20,6 +114,10 @@ export const onUpdateNote = /* GraphQL */ `
       name
       points
       description
+      peopleID
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
@@ -32,6 +130,10 @@ export const onDeleteNote = /* GraphQL */ `
       name
       points
       description
+      peopleID
+      _version
+      _deleted
+      _lastChangedAt
       createdAt
       updatedAt
     }
