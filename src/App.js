@@ -32,6 +32,9 @@ function App() {
  
     async function checkUser() {
       let user = await Auth.currentAuthenticatedUser();  
+      console.log("----------------------------------")
+      console.log(user)
+      console.log("----------------------------------")
       alert(user.username)
   }
 
