@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { API, Auth } from 'aws-amplify';
+import { API, Auth, DataStore } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
@@ -18,7 +18,20 @@ function App() {
 
  async function createUser(){
    const user = await Auth.currentAuthenticatedUser()
-   console.log({ user })
+   console.log({user})
+   try{
+     
+     await DataStore.save(
+        new People({
+         subID: user.sub
+        })
+
+       );
+   } catch (error) {
+     console.log( "User Creation Failed: ", error );
+   }
+   
+   
  }
 
   async function fetchNotes() {
