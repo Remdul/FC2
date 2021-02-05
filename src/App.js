@@ -42,6 +42,12 @@ function App() {
         value={formData.name}
       />
       <input
+        onChange={e => setFormData({ ...formData, 'points': e.target.value})}
+        placeholder="Point Value"
+        value={formData.points}
+      />
+
+      <input
         onChange={e => setFormData({ ...formData, 'description': e.target.value})}
         placeholder="Task description"
         value={formData.description}
