@@ -18,10 +18,11 @@ function App() {
   }, []);
 
  async function createUser(){
-   const user = await Auth.currentAuthenticatedUser()
-   console.log({user})
+   const { attributes } = await Auth.currentAuthenticatedUser()
+   console.log({attributes})
    try{
-      await API.graphql({ query: createPeopleMutation, variables: { subID: user.sub } });
+      console.log({attributes})
+      console.log(typeof(attributes))
    } catch (error) {
      console.log( "User Creation Failed: ", error );
    }
