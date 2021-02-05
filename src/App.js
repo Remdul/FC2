@@ -33,9 +33,12 @@ function App() {
   
   async function checkUser() {
     let user = await Auth.currentAuthenticatedUser();  
+    const { attributes } = await Auth.currentAuthenticatedUser()
     console.log("HERE -----------------------------------------------...")
     console.log(user.email)
     console.log(user.sub)
+    console.log(attributes.email)
+    console.log(attributes.sub)
     console.log("HERE -----------------------------------------------^^^")
   }
 
