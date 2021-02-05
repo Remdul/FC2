@@ -17,20 +17,6 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "Notes": {
-                    "name": "Notes",
-                    "isArray": true,
-                    "type": {
-                        "model": "Note"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": "peopleID"
-                    }
-                },
                 "subID": {
                     "name": "subID",
                     "isArray": false,
@@ -94,13 +80,6 @@ export const schema = {
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
-                },
-                "peopleID": {
-                    "name": "peopleID",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
                 }
             },
             "syncable": true,
@@ -109,15 +88,6 @@ export const schema = {
                 {
                     "type": "model",
                     "properties": {}
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "byPeople",
-                        "fields": [
-                            "peopleID"
-                        ]
-                    }
                 },
                 {
                     "type": "auth",
@@ -140,5 +110,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "ccaef5adad7f0d77107d7c1ec859d8c0"
+    "version": "d42a654e1cf35b440a6f4e2dc8faafea"
 };

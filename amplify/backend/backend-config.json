@@ -28,5 +28,11 @@
         }
       }
     }
+  },
+  "storage": {
+    "familyc2store": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }

@@ -1,0 +1,7 @@
+{
+    "tableName": "userPool",
+    "partitionKeyName": "userID",
+    "partitionKeyType": "S",
+    "sortKeyName": "userName",
+    "sortKeyType": "S"
+}
