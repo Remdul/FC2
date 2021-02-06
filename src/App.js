@@ -20,7 +20,8 @@ function App() {
 
   async function fetchUser() {
     const userData = await API.graphql(graphqlOperation(listUserPools));
-    let curUser = await API.getCurrentAuthenticatedUser();
+    let curUser = await Auth.currentAuthenticatedUser();  
+
     alert(curUser.email);
   }
 
