@@ -44,7 +44,9 @@ function App() {
   }
 
   return (
+
 <div>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
         <header className="header">
           <nav className="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
