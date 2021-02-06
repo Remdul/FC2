@@ -6,6 +6,7 @@ import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 import { createPeople as createPeopleMutation } from './graphql/mutations';
 import { listUserPools } from './graphql/queries';
+import $ from "jquery";
 
 const initialFormState = { name: '', description: '' }
 
@@ -46,8 +47,6 @@ function App() {
   return (
 
 <div>
-    <div dangerouslySetInnerHTML="<script src='//code.jquery.com/jquery-1.11.1.min.js' />" >
-
         <header className="header">
           <nav className="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
