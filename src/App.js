@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom'
 import './App.css';
 import { API, Auth, DataStore, graphqlOperation } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
@@ -10,7 +11,8 @@ import $ from "jquery";
 
 const initialFormState = { name: '', description: '' }
 
-function App() {
+class App extends React.Component {
+  render() {
   const [notes, setNotes] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
@@ -267,5 +269,5 @@ function App() {
       </div>
     );
   }
-
+}
 export default withAuthenticator(App);
