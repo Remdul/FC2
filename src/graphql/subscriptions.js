@@ -12,22 +12,6 @@ export const onCreatePeople = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      Notes {
-        items {
-          id
-          name
-          points
-          description
-          peopleID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
     }
   }
 `;
@@ -42,22 +26,6 @@ export const onUpdatePeople = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      Notes {
-        items {
-          id
-          name
-          points
-          description
-          peopleID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
     }
   }
 `;
@@ -72,22 +40,6 @@ export const onDeletePeople = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      Notes {
-        items {
-          id
-          name
-          points
-          description
-          peopleID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
     }
   }
 `;
@@ -98,7 +50,6 @@ export const onCreateNote = /* GraphQL */ `
       name
       points
       description
-      peopleID
       _version
       _deleted
       _lastChangedAt
@@ -114,7 +65,6 @@ export const onUpdateNote = /* GraphQL */ `
       name
       points
       description
-      peopleID
       _version
       _deleted
       _lastChangedAt
@@ -130,12 +80,35 @@ export const onDeleteNote = /* GraphQL */ `
       name
       points
       description
-      peopleID
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
+    }
+  }
+`;
+export const onCreateUserPool = /* GraphQL */ `
+  subscription OnCreateUserPool($userID: String, $userName: String) {
+    onCreateUserPool(userID: $userID, userName: $userName) {
+      userID
+      userName
+    }
+  }
+`;
+export const onUpdateUserPool = /* GraphQL */ `
+  subscription OnUpdateUserPool($userID: String, $userName: String) {
+    onUpdateUserPool(userID: $userID, userName: $userName) {
+      userID
+      userName
+    }
+  }
+`;
+export const onDeleteUserPool = /* GraphQL */ `
+  subscription OnDeleteUserPool($userID: String, $userName: String) {
+    onDeleteUserPool(userID: $userID, userName: $userName) {
+      userID
+      userName
     }
   }
 `;

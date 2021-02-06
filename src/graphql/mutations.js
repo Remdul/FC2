@@ -15,22 +15,6 @@ export const createPeople = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      Notes {
-        items {
-          id
-          name
-          points
-          description
-          peopleID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
     }
   }
 `;
@@ -48,22 +32,6 @@ export const updatePeople = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      Notes {
-        items {
-          id
-          name
-          points
-          description
-          peopleID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
     }
   }
 `;
@@ -81,22 +49,6 @@ export const deletePeople = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      Notes {
-        items {
-          id
-          name
-          points
-          description
-          peopleID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
     }
   }
 `;
@@ -110,7 +62,6 @@ export const createNote = /* GraphQL */ `
       name
       points
       description
-      peopleID
       _version
       _deleted
       _lastChangedAt
@@ -129,7 +80,6 @@ export const updateNote = /* GraphQL */ `
       name
       points
       description
-      peopleID
       _version
       _deleted
       _lastChangedAt
@@ -148,12 +98,35 @@ export const deleteNote = /* GraphQL */ `
       name
       points
       description
-      peopleID
       _version
       _deleted
       _lastChangedAt
       createdAt
       updatedAt
+    }
+  }
+`;
+export const createUserPool = /* GraphQL */ `
+  mutation CreateUserPool($input: CreateUserPoolInput!) {
+    createUserPool(input: $input) {
+      userID
+      userName
+    }
+  }
+`;
+export const updateUserPool = /* GraphQL */ `
+  mutation UpdateUserPool($input: UpdateUserPoolInput!) {
+    updateUserPool(input: $input) {
+      userID
+      userName
+    }
+  }
+`;
+export const deleteUserPool = /* GraphQL */ `
+  mutation DeleteUserPool($input: DeleteUserPoolInput!) {
+    deleteUserPool(input: $input) {
+      userID
+      userName
     }
   }
 `;

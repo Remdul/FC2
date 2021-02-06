@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { API, Auth, DataStore } from 'aws-amplify';
+import { API, Auth, DataStore, graphqlOperation } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 import { createPeople as createPeopleMutation } from './graphql/mutations';
+import { listUserPools } from './graphql/queries';
 
 const initialFormState = { name: '', description: '' }
 
@@ -14,25 +15,14 @@ function App() {
 
   useEffect(() => {
     fetchNotes();
-    checkUser();
+    fetchUser();
   }, []);
 
- async function createUser(){
-   const { attributes } = await Auth.currentAuthenticatedUser()
-   console.log({attributes})
-   try{
-      console.log({attributes})
-      console.log(typeof(attributes))
-   } catch (error) {
-     console.log( "User Creation Failed: ", error );
-   }
-   
-   
- }
- 
-    async function checkUser() {
-      let user = await Auth.currentAuthenticatedUser();  
-      alert(user)
+  async function fetchUser() {
+    const userData = await API.graphql(graphqlOperation(listUserPools));
+    console.log("________________________________________")
+    console.log(userData)
+    console.log("________________________________________")
   }
 
   async function fetchNotes() {
@@ -86,7 +76,7 @@ function App() {
             <div key={note.id || note.name} class="card card-pricing text-center px-3 mb-4">
                 <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">{note.name}</span>
                 <div class="bg-transparent card-header pt-4 border-0">
-                    <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="">{note.points} Points</h1>
+                    <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="##"> Point</h1>
                 </div>
                 <div class="card-body pt-0">
                     <ul class="list-unstyled mb-4">

@@ -12,22 +12,6 @@ export const getPeople = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-      Notes {
-        items {
-          id
-          name
-          points
-          description
-          peopleID
-          _version
-          _deleted
-          _lastChangedAt
-          createdAt
-          updatedAt
-        }
-        nextToken
-        startedAt
-      }
     }
   }
 `;
@@ -47,10 +31,6 @@ export const listPeoples = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
-        Notes {
-          nextToken
-          startedAt
-        }
       }
       nextToken
       startedAt
@@ -79,10 +59,6 @@ export const syncPeople = /* GraphQL */ `
         _lastChangedAt
         createdAt
         updatedAt
-        Notes {
-          nextToken
-          startedAt
-        }
       }
       nextToken
       startedAt
@@ -96,7 +72,6 @@ export const getNote = /* GraphQL */ `
       name
       points
       description
-      peopleID
       _version
       _deleted
       _lastChangedAt
@@ -117,7 +92,6 @@ export const listNotes = /* GraphQL */ `
         name
         points
         description
-        peopleID
         _version
         _deleted
         _lastChangedAt
@@ -147,7 +121,6 @@ export const syncNotes = /* GraphQL */ `
         name
         points
         description
-        peopleID
         _version
         _deleted
         _lastChangedAt
@@ -156,6 +129,29 @@ export const syncNotes = /* GraphQL */ `
       }
       nextToken
       startedAt
+    }
+  }
+`;
+export const getUserPool = /* GraphQL */ `
+  query GetUserPool($userID: String!, $userName: String!) {
+    getUserPool(userID: $userID, userName: $userName) {
+      userID
+      userName
+    }
+  }
+`;
+export const listUserPools = /* GraphQL */ `
+  query ListUserPools(
+    $filter: TableUserPoolFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUserPools(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        userID
+        userName
+      }
+      nextToken
     }
   }
 `;
