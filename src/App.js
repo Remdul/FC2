@@ -20,9 +20,8 @@ function App() {
 
   async function fetchUser() {
     const userData = await API.graphql(graphqlOperation(listUserPools));
-    console.log("________________________________________")
-    console.log(userData)
-    console.log("________________________________________")
+    let curUser = await API.getCurrentAuthenticatedUser();
+    alert(curUser.email);
   }
 
   async function fetchNotes() {
