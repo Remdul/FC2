@@ -20,7 +20,7 @@ export const schema = {
                 "createdDate": {
                     "name": "createdDate",
                     "isArray": false,
-                    "type": "AWSTimestamp",
+                    "type": "String",
                     "isRequired": true,
                     "attributes": []
                 },
@@ -34,7 +34,7 @@ export const schema = {
                 "userEmail": {
                     "name": "userEmail",
                     "isArray": false,
-                    "type": "AWSEmail",
+                    "type": "String",
                     "isRequired": false,
                     "attributes": []
                 },
@@ -138,5 +138,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "46924f46dc9ec972316ddce29cf50bde"
+    "version": "bdd9e366b8e7c484aa93b5b50b84d7d4"
 };

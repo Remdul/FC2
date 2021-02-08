@@ -7,7 +7,7 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 export declare class UserPool {
   readonly id: string;
   readonly userName?: string;
-  readonly createdDate: number;
+  readonly createdDate: string;
   readonly firstLogin?: boolean;
   readonly userEmail?: string;
   readonly userSub?: string;
