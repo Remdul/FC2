@@ -7,7 +7,6 @@ import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 import { createPeople as createPeopleMutation } from './graphql/mutations';
 import { listUserPools } from './graphql/queries';
-import $ from "jquery";
 
 const initialFormState = { name: '', description: '' }
 
