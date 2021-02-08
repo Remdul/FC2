@@ -1,12 +1,16 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getPeople = /* GraphQL */ `
-  query GetPeople($id: ID!) {
-    getPeople(id: $id) {
+export const getUserPool = /* GraphQL */ `
+  query GetUserPool($id: ID!) {
+    getUserPool(id: $id) {
       id
+      userName
+      createdDate
+      firstLogin
+      userEmail
+      userSub
       firstName
-      subID
       _version
       _deleted
       _lastChangedAt
@@ -15,17 +19,21 @@ export const getPeople = /* GraphQL */ `
     }
   }
 `;
-export const listPeoples = /* GraphQL */ `
-  query ListPeoples(
-    $filter: ModelPeopleFilterInput
+export const listUserPools = /* GraphQL */ `
+  query ListUserPools(
+    $filter: ModelUserPoolFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listPeoples(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listUserPools(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        userName
+        createdDate
+        firstLogin
+        userEmail
+        userSub
         firstName
-        subID
         _version
         _deleted
         _lastChangedAt
@@ -37,14 +45,14 @@ export const listPeoples = /* GraphQL */ `
     }
   }
 `;
-export const syncPeople = /* GraphQL */ `
-  query SyncPeople(
-    $filter: ModelPeopleFilterInput
+export const syncUserPools = /* GraphQL */ `
+  query SyncUserPools(
+    $filter: ModelUserPoolFilterInput
     $limit: Int
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncPeople(
+    syncUserPools(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -52,8 +60,12 @@ export const syncPeople = /* GraphQL */ `
     ) {
       items {
         id
+        userName
+        createdDate
+        firstLogin
+        userEmail
+        userSub
         firstName
-        subID
         _version
         _deleted
         _lastChangedAt
@@ -129,29 +141,6 @@ export const syncNotes = /* GraphQL */ `
       }
       nextToken
       startedAt
-    }
-  }
-`;
-export const getUserPool = /* GraphQL */ `
-  query GetUserPool($userID: String!, $userName: String!) {
-    getUserPool(userID: $userID, userName: $userName) {
-      userID
-      userName
-    }
-  }
-`;
-export const listUserPools = /* GraphQL */ `
-  query ListUserPools(
-    $filter: TableUserPoolFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listUserPools(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        userID
-        userName
-      }
-      nextToken
     }
   }
 `;

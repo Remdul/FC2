@@ -1,15 +1,19 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createPeople = /* GraphQL */ `
-  mutation CreatePeople(
-    $input: CreatePeopleInput!
-    $condition: ModelPeopleConditionInput
+export const createUserPool = /* GraphQL */ `
+  mutation CreateUserPool(
+    $input: CreateUserPoolInput!
+    $condition: ModelUserPoolConditionInput
   ) {
-    createPeople(input: $input, condition: $condition) {
+    createUserPool(input: $input, condition: $condition) {
       id
+      userName
+      createdDate
+      firstLogin
+      userEmail
+      userSub
       firstName
-      subID
       _version
       _deleted
       _lastChangedAt
@@ -18,15 +22,19 @@ export const createPeople = /* GraphQL */ `
     }
   }
 `;
-export const updatePeople = /* GraphQL */ `
-  mutation UpdatePeople(
-    $input: UpdatePeopleInput!
-    $condition: ModelPeopleConditionInput
+export const updateUserPool = /* GraphQL */ `
+  mutation UpdateUserPool(
+    $input: UpdateUserPoolInput!
+    $condition: ModelUserPoolConditionInput
   ) {
-    updatePeople(input: $input, condition: $condition) {
+    updateUserPool(input: $input, condition: $condition) {
       id
+      userName
+      createdDate
+      firstLogin
+      userEmail
+      userSub
       firstName
-      subID
       _version
       _deleted
       _lastChangedAt
@@ -35,15 +43,19 @@ export const updatePeople = /* GraphQL */ `
     }
   }
 `;
-export const deletePeople = /* GraphQL */ `
-  mutation DeletePeople(
-    $input: DeletePeopleInput!
-    $condition: ModelPeopleConditionInput
+export const deleteUserPool = /* GraphQL */ `
+  mutation DeleteUserPool(
+    $input: DeleteUserPoolInput!
+    $condition: ModelUserPoolConditionInput
   ) {
-    deletePeople(input: $input, condition: $condition) {
+    deleteUserPool(input: $input, condition: $condition) {
       id
+      userName
+      createdDate
+      firstLogin
+      userEmail
+      userSub
       firstName
-      subID
       _version
       _deleted
       _lastChangedAt
@@ -103,30 +115,6 @@ export const deleteNote = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-    }
-  }
-`;
-export const createUserPool = /* GraphQL */ `
-  mutation CreateUserPool($input: CreateUserPoolInput!) {
-    createUserPool(input: $input) {
-      userID
-      userName
-    }
-  }
-`;
-export const updateUserPool = /* GraphQL */ `
-  mutation UpdateUserPool($input: UpdateUserPoolInput!) {
-    updateUserPool(input: $input) {
-      userID
-      userName
-    }
-  }
-`;
-export const deleteUserPool = /* GraphQL */ `
-  mutation DeleteUserPool($input: DeleteUserPoolInput!) {
-    deleteUserPool(input: $input) {
-      userID
-      userName
     }
   }
 `;

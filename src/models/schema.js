@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "People": {
-            "name": "People",
+        "UserPool": {
+            "name": "UserPool",
             "fields": {
                 "id": {
                     "name": "id",
@@ -10,23 +10,51 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
+                "userName": {
+                    "name": "userName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdDate": {
+                    "name": "createdDate",
+                    "isArray": false,
+                    "type": "AWSTimestamp",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "firstLogin": {
+                    "name": "firstLogin",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "userEmail": {
+                    "name": "userEmail",
+                    "isArray": false,
+                    "type": "AWSEmail",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "userSub": {
+                    "name": "userSub",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
                 "firstName": {
                     "name": "firstName",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
                     "attributes": []
-                },
-                "subID": {
-                    "name": "subID",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
                 }
             },
             "syncable": true,
-            "pluralName": "People",
+            "pluralName": "UserPools",
             "attributes": [
                 {
                     "type": "model",
@@ -110,5 +138,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "d42a654e1cf35b440a6f4e2dc8faafea"
+    "version": "46924f46dc9ec972316ddce29cf50bde"
 };

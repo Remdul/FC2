@@ -1,7 +1,11 @@
-type People @model @auth(rules: [{allow: public}]) {
+type UserPool @model @auth(rules: [{allow: public}]) {
   id: ID!
+  userName: String
+  createdDate: AWSTimestamp!
+  firstLogin: Boolean
+  userEmail: AWSEmail
+  userSub: String
   firstName: String
-  subID: String!
 }
 
 type Note @model @auth(rules: [{allow: public}]) {

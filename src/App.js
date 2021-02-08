@@ -8,6 +8,13 @@ import { createPeople as createPeopleMutation } from './graphql/mutations';
 import { listUserPools } from './graphql/queries';
 import $ from "jquery";
 
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Error from './components/Error';
+import Navigation from './components/Navigation';
+
+
 const initialFormState = { name: '', description: '' }
 
 function App() {
@@ -22,8 +29,11 @@ function App() {
   async function fetchUser() {
     const userData = await API.graphql(graphqlOperation(listUserPools));
     let curUser = await Auth.currentAuthenticatedUser();  
-
-    alert(curUser.email);
+    console.log("userData = ", userData);
+    console.log("curUser  = ", curUser);
+    alert(curUser.username);
+    alert(curUser.username);
+    
   }
 
   async function fetchNotes() {
@@ -47,6 +57,9 @@ function App() {
   return (
 
 <div>
+
+
+
         <header className="header">
           <nav className="navbar navbar-toggleable-md navbar-light pt-0 pb-0 ">
             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

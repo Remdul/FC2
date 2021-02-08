@@ -1,12 +1,16 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreatePeople = /* GraphQL */ `
-  subscription OnCreatePeople {
-    onCreatePeople {
+export const onCreateUserPool = /* GraphQL */ `
+  subscription OnCreateUserPool {
+    onCreateUserPool {
       id
+      userName
+      createdDate
+      firstLogin
+      userEmail
+      userSub
       firstName
-      subID
       _version
       _deleted
       _lastChangedAt
@@ -15,12 +19,16 @@ export const onCreatePeople = /* GraphQL */ `
     }
   }
 `;
-export const onUpdatePeople = /* GraphQL */ `
-  subscription OnUpdatePeople {
-    onUpdatePeople {
+export const onUpdateUserPool = /* GraphQL */ `
+  subscription OnUpdateUserPool {
+    onUpdateUserPool {
       id
+      userName
+      createdDate
+      firstLogin
+      userEmail
+      userSub
       firstName
-      subID
       _version
       _deleted
       _lastChangedAt
@@ -29,12 +37,16 @@ export const onUpdatePeople = /* GraphQL */ `
     }
   }
 `;
-export const onDeletePeople = /* GraphQL */ `
-  subscription OnDeletePeople {
-    onDeletePeople {
+export const onDeleteUserPool = /* GraphQL */ `
+  subscription OnDeleteUserPool {
+    onDeleteUserPool {
       id
+      userName
+      createdDate
+      firstLogin
+      userEmail
+      userSub
       firstName
-      subID
       _version
       _deleted
       _lastChangedAt
@@ -85,30 +97,6 @@ export const onDeleteNote = /* GraphQL */ `
       _lastChangedAt
       createdAt
       updatedAt
-    }
-  }
-`;
-export const onCreateUserPool = /* GraphQL */ `
-  subscription OnCreateUserPool($userID: String, $userName: String) {
-    onCreateUserPool(userID: $userID, userName: $userName) {
-      userID
-      userName
-    }
-  }
-`;
-export const onUpdateUserPool = /* GraphQL */ `
-  subscription OnUpdateUserPool($userID: String, $userName: String) {
-    onUpdateUserPool(userID: $userID, userName: $userName) {
-      userID
-      userName
-    }
-  }
-`;
-export const onDeleteUserPool = /* GraphQL */ `
-  subscription OnDeleteUserPool($userID: String, $userName: String) {
-    onDeleteUserPool(userID: $userID, userName: $userName) {
-      userID
-      userName
     }
   }
 `;
