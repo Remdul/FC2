@@ -6,6 +6,10 @@ import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 import { createPeople as createPeopleMutation } from './graphql/mutations';
 import { listUserPools } from './graphql/queries';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+
+
 import $ from "jquery";
 
 import Home from './components/Home';
