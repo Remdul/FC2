@@ -4,12 +4,12 @@ import { API, Auth, DataStore, graphqlOperation } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
-import { listMembers } from './graphql/queries';
+import { listUsers } from './graphql/queries';
 
 const initialFormState = { name: '', description: '' }
 
 function App() {
-  const [notes, setNotes, setMembers] = useState([]);
+  const [notes, setNotes, setUsers] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
@@ -27,9 +27,9 @@ function App() {
   }
   
   async function fetchUsers() {
-    const userData = await API.graphql({ query: listMembers });
+    const userData = await API.graphql({ query: listUsers });
     try {
-      setMembers(userData.data.listMembers.items);
+      setUsers(userData.data.listMembers.items);
       console.log("userPools  = ", userData.data.listMembers.items);  
     } catch (error) {
       console.log("SetUserPools failed = ", error);  
