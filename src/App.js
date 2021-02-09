@@ -26,7 +26,7 @@ function App() {
       console.log("Error at userData: ", error);
     }
     try {
-      console.log("curUser  = ", curUser);
+      console.log("curUser  = ", curUser.username);
     } catch (error) {
       console.log("Error at curUser: ", error);
     }
