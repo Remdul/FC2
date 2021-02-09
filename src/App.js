@@ -30,7 +30,7 @@ function App() {
     const userData = await API.graphql({ query: listUsers });
     try {
       setUsers(userData.data.listUsers.items);
-      console.log("userPools  = ", userData.data.listUsers.items);  
+      console.log("userPools  = ", userData);  
     } catch (error) {
       console.log("SetUserPools failed = ", error);  
     }
