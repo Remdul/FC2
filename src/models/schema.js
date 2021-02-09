@@ -151,7 +151,7 @@ export const schema = {
                     "name": "username",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": []
                 },
                 "firstName": {
@@ -172,7 +172,7 @@ export const schema = {
                     "name": "email",
                     "isArray": false,
                     "type": "AWSEmail",
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": []
                 },
                 "location": {

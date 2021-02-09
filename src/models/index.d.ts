@@ -27,10 +27,10 @@ export declare class Note {
 
 export declare class User {
   readonly id: string;
-  readonly username: string;
+  readonly username?: string;
   readonly firstName?: string;
   readonly lastName?: string;
-  readonly email: string;
+  readonly email?: string;
   readonly location?: string;
   readonly createdAt?: string;
   readonly updatedAt?: string;
