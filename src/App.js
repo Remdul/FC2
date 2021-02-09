@@ -11,7 +11,7 @@ import $ from "jquery";
 const initialFormState = { name: '', description: '' }
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes, setUserPools] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
@@ -32,9 +32,14 @@ function App() {
     } catch (error) {
       console.log("Error at curUser: ", error);
     }
+    try {
+      setUserPools(userData.data.listUserPools.items);
+      console.log("userPools  = ", userData.data.listUserPools.items);  
+    } catch (error) {
+      console.log("SetUserPools failed = ", error);  
+    }
     
-    alert(curUser.username);
-    alert(curUser.email);
+    
   }
 
   async function fetchNotes() {
