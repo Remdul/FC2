@@ -14,20 +14,9 @@
       "output": {
         "authConfig": {
           "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authfamilyc2c154daa7"
-            }
+            "authenticationType": "AWS_IAM"
           },
-          "additionalAuthenticationProviders": [
-            {
-              "authenticationType": "API_KEY",
-              "apiKeyConfig": {
-                "apiKeyExpirationDays": 365,
-                "description": "Public API"
-              }
-            }
-          ]
+          "additionalAuthenticationProviders": []
         }
       }
     }
