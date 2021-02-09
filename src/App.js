@@ -14,30 +14,27 @@ function App() {
 
   useEffect(() => {
     fetchNotes();
-    fetchUser();
+    fetchUsers();
+    fetchCurrentUser();
   }, []);
 
-  async function fetchUser() {
-    const userData = await API.graphql({ query: listMembers });
+  async function fetchCurrentUser() {
     let curUser = await Auth.currentAuthenticatedUser();  
-    try {
-      console.log("userData = ", userData);
-    } catch (error) {
-      console.log("Error at userData: ", error);
-    }
     try {
       console.log("curUser  = ", curUser.username);
     } catch (error) {
       console.log("Error at curUser: ", error);
     }
+  }
+  
+  async function fetchUsers() {
+    const userData = await API.graphql({ query: listMembers });
     try {
       setMembers(userData.data.listMembers.items);
       console.log("userPools  = ", userData.data.listMembers.items);  
     } catch (error) {
       console.log("SetUserPools failed = ", error);  
     }
-    
-    
   }
 
   async function fetchNotes() {
