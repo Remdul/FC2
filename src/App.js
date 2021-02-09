@@ -29,8 +29,8 @@ function App() {
   async function fetchUsers() {
     const userData = await API.graphql({ query: listUsers });
     try {
-      setUsers(userData.data.listMembers.items);
-      console.log("userPools  = ", userData.data.listMembers.items);  
+      setUsers(userData.data.listUsers.items);
+      console.log("userPools  = ", userData.data.listUsers.items);  
     } catch (error) {
       console.log("SetUserPools failed = ", error);  
     }
@@ -155,34 +155,6 @@ function App() {
                       <li className="header-ul text-center">You have 10 notifications</li>
                       <li>
                         {/* inner menu: contains the actual data */}
-                        <ul className="menu list-unstyled">
-                          <li>
-                            <a href="#">
-                              <i className="fa fa-users text-aqua" /> 5 new members joined today
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fa fa-warning text-yellow" /> Very long description here that may not fit into the
-                              page and may cause design problems
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fa fa-users text-red" /> 5 new members joined
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fa fa-shopping-cart text-green" /> 25 sales made
-                            </a>
-                          </li>
-                          <li>
-                            <a href="#">
-                              <i className="fa fa-user text-red" /> You changed your username
-                            </a>
-                          </li>
-                        </ul>
                       </li>
                       <li className="footer-ul text-center"><a href="#">View all</a></li>
                     </ul>
