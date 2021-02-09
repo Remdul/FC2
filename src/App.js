@@ -4,14 +4,12 @@ import { API, Auth, DataStore, graphqlOperation } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
-import { createPeople as createPeopleMutation } from './graphql/mutations';
-import { listUserPools } from './graphql/queries';
-import $ from "jquery";
+import { listMembers } from './graphql/queries';
 
 const initialFormState = { name: '', description: '' }
 
 function App() {
-  const [notes, setNotes, setUserPools] = useState([]);
+  const [notes, setNotes, setMembers] = useState([]);
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
@@ -20,7 +18,7 @@ function App() {
   }, []);
 
   async function fetchUser() {
-    const userData = await API.graphql({ query: listUserPools });
+    const userData = await API.graphql({ query: listMembers });
     let curUser = await Auth.currentAuthenticatedUser();  
     try {
       console.log("userData = ", userData);
@@ -33,8 +31,8 @@ function App() {
       console.log("Error at curUser: ", error);
     }
     try {
-      setUserPools(userData.data.listUserPools.items);
-      console.log("userPools  = ", userData.data.listUserPools.items);  
+      setMembers(userData.data.listMembers.items);
+      console.log("userPools  = ", userData.data.listMembers.items);  
     } catch (error) {
       console.log("SetUserPools failed = ", error);  
     }
