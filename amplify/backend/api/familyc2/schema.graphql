@@ -1,7 +1,7 @@
 type UserPool @model @auth(rules: [{allow: public}]) {
   id: ID!
   userName: String
-  createdDate: String!
+  createdDate: String
   firstLogin: Boolean
   userEmail: String
   userSub: String

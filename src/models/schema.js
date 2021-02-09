@@ -21,7 +21,7 @@ export const schema = {
                     "name": "createdDate",
                     "isArray": false,
                     "type": "String",
-                    "isRequired": true,
+                    "isRequired": false,
                     "attributes": []
                 },
                 "firstLogin": {
