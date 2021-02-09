@@ -1,9 +1,9 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getUserPool = /* GraphQL */ `
-  query GetUserPool($id: ID!) {
-    getUserPool(id: $id) {
+export const getMember = /* GraphQL */ `
+  query GetMember($id: ID!) {
+    getMember(id: $id) {
       id
       userName
       createdDate
@@ -19,13 +19,13 @@ export const getUserPool = /* GraphQL */ `
     }
   }
 `;
-export const listUserPools = /* GraphQL */ `
-  query ListUserPools(
-    $filter: ModelUserPoolFilterInput
+export const listMembers = /* GraphQL */ `
+  query ListMembers(
+    $filter: ModelMemberFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listUserPools(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listMembers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         userName
@@ -45,14 +45,14 @@ export const listUserPools = /* GraphQL */ `
     }
   }
 `;
-export const syncUserPools = /* GraphQL */ `
-  query SyncUserPools(
-    $filter: ModelUserPoolFilterInput
+export const syncMembers = /* GraphQL */ `
+  query SyncMembers(
+    $filter: ModelMemberFilterInput
     $limit: Int
     $nextToken: String
     $lastSync: AWSTimestamp
   ) {
-    syncUserPools(
+    syncMembers(
       filter: $filter
       limit: $limit
       nextToken: $nextToken

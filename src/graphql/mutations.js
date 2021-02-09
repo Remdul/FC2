@@ -1,12 +1,12 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createUserPool = /* GraphQL */ `
-  mutation CreateUserPool(
-    $input: CreateUserPoolInput!
-    $condition: ModelUserPoolConditionInput
+export const createMember = /* GraphQL */ `
+  mutation CreateMember(
+    $input: CreateMemberInput!
+    $condition: ModelMemberConditionInput
   ) {
-    createUserPool(input: $input, condition: $condition) {
+    createMember(input: $input, condition: $condition) {
       id
       userName
       createdDate
@@ -22,12 +22,12 @@ export const createUserPool = /* GraphQL */ `
     }
   }
 `;
-export const updateUserPool = /* GraphQL */ `
-  mutation UpdateUserPool(
-    $input: UpdateUserPoolInput!
-    $condition: ModelUserPoolConditionInput
+export const updateMember = /* GraphQL */ `
+  mutation UpdateMember(
+    $input: UpdateMemberInput!
+    $condition: ModelMemberConditionInput
   ) {
-    updateUserPool(input: $input, condition: $condition) {
+    updateMember(input: $input, condition: $condition) {
       id
       userName
       createdDate
@@ -43,12 +43,12 @@ export const updateUserPool = /* GraphQL */ `
     }
   }
 `;
-export const deleteUserPool = /* GraphQL */ `
-  mutation DeleteUserPool(
-    $input: DeleteUserPoolInput!
-    $condition: ModelUserPoolConditionInput
+export const deleteMember = /* GraphQL */ `
+  mutation DeleteMember(
+    $input: DeleteMemberInput!
+    $condition: ModelMemberConditionInput
   ) {
-    deleteUserPool(input: $input, condition: $condition) {
+    deleteMember(input: $input, condition: $condition) {
       id
       userName
       createdDate

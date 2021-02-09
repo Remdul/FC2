@@ -281,6 +281,7 @@ function App() {
             </div>
           </aside>
         </div>
+        <AmplifySignOut />
       </div>
     );
   }

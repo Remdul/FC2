@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "UserPool": {
-            "name": "UserPool",
+        "Member": {
+            "name": "Member",
             "fields": {
                 "id": {
                     "name": "id",
@@ -54,7 +54,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "UserPools",
+            "pluralName": "Members",
             "attributes": [
                 {
                     "type": "model",
@@ -138,5 +138,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "bdd9e366b8e7c484aa93b5b50b84d7d4"
+    "version": "04ad6314a86f56d69405860f2a66e0cc"
 };

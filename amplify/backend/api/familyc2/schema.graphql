@@ -1,4 +1,4 @@
-type UserPool @model @auth(rules: [{allow: public}]) {
+type Member @model @auth(rules: [{allow: public}]) {
   id: ID!
   userName: String
   createdDate: String
