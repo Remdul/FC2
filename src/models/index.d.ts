@@ -24,3 +24,16 @@ export declare class Note {
   constructor(init: ModelInit<Note>);
   static copyOf(source: Note, mutator: (draft: MutableModel<Note>) => MutableModel<Note> | void): Note;
 }
+
+export declare class User {
+  readonly id: string;
+  readonly username: string;
+  readonly firstName?: string;
+  readonly lastName?: string;
+  readonly email: string;
+  readonly location?: string;
+  readonly createdAt?: string;
+  readonly updatedAt?: string;
+  constructor(init: ModelInit<User>);
+  static copyOf(source: User, mutator: (draft: MutableModel<User>) => MutableModel<User> | void): User;
+}
