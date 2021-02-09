@@ -270,12 +270,56 @@ function App() {
                 <li> <a href="#"><i className="fa fa-files-o" /> <span className="nav-label">Other Pages</span></a> </li>
                 <li> <a href="#"><i className="fa fa-files-o" /> <span className="nav-label">Other Pages</span></a> </li>
                 <li> <a href="#"><i className="fa fa-files-o" /> <span className="nav-label">Other Pages</span></a> </li>
-                <li> <a href="#"><i className="fa fa-files-o" /> <span className="nav-label">Other Pages</span></a> </li>
+                <li> <AmplifySignOut /> </li>
               </ul>
             </div>
           </aside>
+          <h1>My Tasks</h1>
+          <input
+            onChange={e => setFormData({ ...formData, 'name': e.target.value})}
+            placeholder="Task name"
+            value={formData.name}
+          />
+          <input
+            onChange={e => setFormData({ ...formData, 'points': e.target.value})}
+            placeholder="Point Value"
+            value={formData.points}
+          />
+    
+          <input
+            onChange={e => setFormData({ ...formData, 'description': e.target.value})}
+            placeholder="Task description"
+            value={formData.description}
+          />
+          <button onClick={createNote}>Create Task</button>
+          
+          <div class="container mb-5 mt-5">
+            <div class="pricing card-deck flex-column flex-md-row mb-3">
+    
+            </div>
+          </div>
+    
+          <div style={{marginBottom: 30}}>
+            {
+              notes.map(note => (
+                <div key={note.id || note.name} class="card card-pricing text-center px-3 mb-4">
+                    <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white shadow-sm">{note.name}</span>
+                    <div class="bg-transparent card-header pt-4 border-0">
+                        <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="##"> Point</h1>
+                    </div>
+                    <div class="card-body pt-0">
+                        <ul class="list-unstyled mb-4">
+                            <li>{note.description}</li>
+                        </ul>
+                        <button onClick={() => deleteNote(note)} type="button" class="btn btn-outline-secondary mb-3">Delete Task</button>
+                    </div>
+                
+                </div>
+              ))
+            }
+          </div>
         </div>
-        <AmplifySignOut />
+        
       </div>
     );
   }
