@@ -22,8 +22,17 @@ function App() {
   async function fetchUser() {
     const userData = await API.graphql({ query: listUserPools });
     let curUser = await Auth.currentAuthenticatedUser();  
-    console.log("userData = ", userData);
-    console.log("curUser  = ", curUser);
+    try {
+      console.log("userData = ", userData);
+    } catch (error) {
+      console.log("Error at userData: ", error);
+    }
+    try {
+      console.log("curUser  = ", curUser);
+    } catch (error) {
+      console.log("Error at curUser: ", error);
+    }
+    
     alert(curUser.username);
     alert(curUser.email);
   }
