@@ -19,12 +19,11 @@ function App() {
   }, []);
 
   async function fetchCurrentUser() {
-    let curUser = await Auth.currentAuthenticatedUser();  
-    try {
-      console.log("curUser  = ", curUser.username);
-    } catch (error) {
-      console.log("Error at curUser: ", error);
-    }
+    Auth.currentAuthenticatedUser({
+      bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+    }).then(user => console.log(user)).catch(err => console.log(err));
+    const { attributes } = await Auth.currentAuthenticatedUser();
+    console.log(attributes);
   }
   
   async function fetchUsers() {
