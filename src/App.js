@@ -25,6 +25,8 @@ function App() {
     const { attributes } = await Auth.currentAuthenticatedUser();
     console.log(attributes);
     const subID = attributes.sub;
+    console.log("subID: ", subID);
+    console.log("subID1: ", subID[1]);
     try {
       const myUser = await API.graphql({ query: getUser, variables: { id: { subID } }});
       console.log("CURRENT USER: ", myUser);
