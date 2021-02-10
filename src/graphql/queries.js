@@ -201,13 +201,11 @@ export const listUsers = /* GraphQL */ `
     listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        userName
+        username
         firstName
         lastName
-        userEmail
-        userSub
+        email
         location
-        firstLogin
         createdAt
         updatedAt
         _deleted
