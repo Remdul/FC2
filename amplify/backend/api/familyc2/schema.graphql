@@ -16,7 +16,7 @@ type Note @model @auth(rules: [{allow: public, provider: iam}]) {
 }
 
 type User @model @aws_cognito_user_pools @key(name: "findUsername", fields: ["username"], queryField: "findUsername") @auth(rules: [{allow: public, provider: iam}]) {
-  id: ID
+  id: ID!
   username: String
   firstName: String
   lastName: String
