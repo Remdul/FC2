@@ -4,7 +4,7 @@ import { API, Auth, DataStore, graphqlOperation } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
-import { listUsers } from './graphql/queries';
+import { listUsers, getUser } from './graphql/queries';
 
 const initialFormState = { name: '', description: '' }
 
@@ -24,6 +24,12 @@ function App() {
     }).then(user => console.log(user)).catch(err => console.log(err));
     const { attributes } = await Auth.currentAuthenticatedUser();
     console.log(attributes);
+    try {
+      const myUser = await API.graphql({ query: getUser(attributes.sub) })
+      console.log("CURRENT USER: ", myUser);
+    } catch (error) { 
+      console.log(error);
+    }
   }
   
   async function fetchUsers() {
