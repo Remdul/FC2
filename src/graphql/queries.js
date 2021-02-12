@@ -186,9 +186,8 @@ export const getUser = /* GraphQL */ `
       location
       createdAt
       updatedAt
-      _version
       _deleted
-      _lastChangedAt
+
     }
   }
 `;
