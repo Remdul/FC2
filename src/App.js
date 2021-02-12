@@ -22,6 +22,7 @@ function App() {
       try {
           const data = await API.graphql({ query: getUser, variables: {id:userID}})
           const user = data.data.getUser
+          console.log("getThisUser: ", JSON.stringify(user));
           return user
       } catch(error) {
           console.log('Error on getThisUser: ', error)
