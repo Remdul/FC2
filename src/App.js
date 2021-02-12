@@ -50,7 +50,7 @@ function App() {
 
   async function fetchNotes() {
     const apiData = await API.graphql({ query: listNotes });
-    console.log("AMAZING Notes: ", apiData);
+    console.log("AMAZING sNotes: ", apiData);
     setNotes(apiData.data.listNotes.items);
   }
 
