@@ -21,7 +21,7 @@ function App() {
   async function getThisUser(userID) {
       try {
           const data = await API.graphql({ query: getUser, variables: {id:userID}})
-          console.log("(1) Data of getThisUser: ", JSON.stringify(data));
+          console.log("(1) Data of getThisUser: ", JSON.stringify(data.data.getUser));
           return data.data.getUser
       } catch(error) {
           console.log('Error on getThisUser: ', error)
@@ -31,7 +31,7 @@ function App() {
   async function fetchCurrentUser() {
     const whoAmI = await Auth.currentAuthenticatedUser({ bypassCache: false });
     const subID  = whoAmI.attributes.sub;
-    const iDunno = getThisUser(subID);
+    const iDunno = await getThisUser(subID);
     
     console.log("Current Authenticated User: ", whoAmI.attributes.sub);
     console.log("(2) getThisUser: ", JSON.stringify(iDunno));
