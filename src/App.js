@@ -22,22 +22,19 @@ function App() {
       try {
           const data = await API.graphql({ query: getUser, variables: {id:userID}})
           const user = data.data.getUser
-          console.log("User: " + JSON.stringify(user))
           return user
       } catch(error) {
-          console.log('Fout: ', error)
+          console.log('Error on getThisUser: ', error)
       }
   }
 
   async function fetchCurrentUser() {
-    Auth.currentAuthenticatedUser({
-      bypassCache: false  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
-    }).then(user => console.log(user)).catch(err => console.log(err));
-    const { attributes } = await Auth.currentAuthenticatedUser();
-    console.log(attributes);
-    const subID = attributes.sub;
+    const whoAmI = await Auth.currentAuthenticatedUser({ bypassCache: false });
+    const subID  = whoAmI.attributes.sub;
     const iDunno = getThisUser(subID);
-    console.log(JSON.stringify(iDunno));
+    
+    console.log("Current Authenticated User: ", whoAmI.attributes.sub);
+    console.log("getThisUser: ", JSON.stringify(iDunno));
   }
   
   async function fetchUsers() {
