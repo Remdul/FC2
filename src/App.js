@@ -25,6 +25,12 @@ function App() {
     const gotUser= data.data.getUser.id
     console.log("Current Authenticated User: ", whoAmI.attributes.sub);
     console.log("getThisUser               : ", gotUser);
+    if (whoAmI.attributes.sub == gotUser){
+      console.log("CurrentUser is getThisUser");
+    } else {
+      console.log("CurrentUser is NOOOOOT getThisUser");
+    }
+    
   }
   
   async function fetchUsers() {
