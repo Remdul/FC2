@@ -12,10 +12,8 @@ import theme from "./theme";
 import GlobalStyles from "./GlobalStyles";
 import Pace from "./shared/components/Pace";
 
-
 const LoggedInComponent = lazy(() => import("./logged_in/components/Main"));
 const LoggedOutComponent = lazy(() => import("./logged_out/components/Main"));
-
 
 const initialFormState = { name: '', description: '' }
 
@@ -52,7 +50,7 @@ function App() {
 
   async function fetchNotes() {
     const apiData = await API.graphql({ query: listNotes });
-    console.log("Notes: ", apiData);
+    console.log("AMAZING Notes: ", apiData);
     setNotes(apiData.data.listNotes.items);
   }
 
