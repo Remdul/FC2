@@ -22,9 +22,9 @@ function App() {
     const whoAmI = await Auth.currentAuthenticatedUser({ bypassCache: false });
     const subID  = whoAmI.attributes.sub;
     const data   = await API.graphql({ query: getUser, variables: {id:subID}})
-    
+    const gotUser= data.data.getUser.id
     console.log("Current Authenticated User: ", whoAmI.attributes.sub);
-    console.log("getThisUser               : ", JSON.stringify(data));
+    console.log("getThisUser               : ", gotUser);
   }
   
   async function fetchUsers() {
