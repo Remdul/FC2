@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     fetchNotes();
     fetchUsers();
-    fetchCurrentUser();
+    console.log("Received on fetCurrentUser: ", fetchCurrentUser());
   }, []);
 
     async function fetchCurrentUser() {
@@ -23,14 +23,11 @@ function App() {
     const subID  = whoAmI.attributes.sub;
     const data   = await API.graphql({ query: getUser, variables: {id:subID}})
     const gotUser= data.data.getUser.id
-    console.log("Current Authenticated User: ", whoAmI.attributes.sub);
-    console.log("getThisUser               : ", gotUser);
     if (whoAmI.attributes.sub == gotUser){
-      console.log("CurrentUser is getThisUser");
+      return true;
     } else {
-      console.log("CurrentUser is NOOOOOT getThisUser");
+      return false;
     }
-    
   }
   
   async function fetchUsers() {
