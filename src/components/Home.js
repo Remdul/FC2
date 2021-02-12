@@ -1,12 +1,10 @@
-import React from 'react';
- 
-const home = () => {
+import React, { Component } from 'react';
+import AppNavBar from '../components/appNavBar'
+class Home extends Component {
+  render() {
     return (
-       <div>
-          <h1>Home</h1>
-           <p>Home page body content</p>
-       </div>
+      <AppNavBar />
     );
+  }
 }
- 
-export default home;
+export default Home;
