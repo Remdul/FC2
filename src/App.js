@@ -21,9 +21,8 @@ function App() {
   async function getThisUser(userID) {
       try {
           const data = await API.graphql({ query: getUser, variables: {id:userID}})
-          const user = data.data.getUser
-          console.log("getThisUser: ", JSON.stringify(user));
-          return user
+          console.log("(1) Data of getThisUser: ", JSON.stringify(data));
+          return data
       } catch(error) {
           console.log('Error on getThisUser: ', error)
       }
@@ -35,7 +34,7 @@ function App() {
     const iDunno = getThisUser(subID);
     
     console.log("Current Authenticated User: ", whoAmI.attributes.sub);
-    console.log("getThisUser: ", JSON.stringify(iDunno));
+    console.log("(2) getThisUser: ", JSON.stringify(iDunno));
   }
   
   async function fetchUsers() {
